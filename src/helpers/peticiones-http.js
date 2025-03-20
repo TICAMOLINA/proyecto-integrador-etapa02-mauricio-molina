@@ -1,9 +1,9 @@
 
-export const peticionesHttp = async (URL, options) => {
+export const peticionesHttp = async (url, options) => {
 
     try {
 
-        const res = await fetch(URL,options)
+        const res = await fetch(url, options)
         if(!res.ok) throw new Error(`No se pudo realizar la petición. Código: ${res.status}` )
         const data = await res.json()
         return data
