@@ -1,6 +1,10 @@
+import useTitulo from '../hooks/useTitulo'
 import './Contacto.scss'
 
 const Contacto = () => {
+
+  useTitulo('Contacto')
+
   return (
     <main className="contact-page">
 

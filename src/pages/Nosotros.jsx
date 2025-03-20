@@ -1,6 +1,10 @@
+import useTitulo from '../hooks/useTitulo'
 import './Nosotros.scss'
 
 const Nosotros = () => {
+  
+  useTitulo('Nosotros')
+
   return (
     <main>
       <section className="section-header">
