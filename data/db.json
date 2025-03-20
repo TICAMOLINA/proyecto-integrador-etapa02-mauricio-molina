@@ -6,7 +6,7 @@
             "foto": "imgs/alemania-1990.webp",
             "descripcion": "La titular color blanca, utilizada por los bávaros en aquella disputada final contra el equipo argentino.",
             "precio": 222.20,
-            "stock" : "1000",
+            "stock" : 1000,
             "categoria": "Selecciones",
             "envio": true
         },
