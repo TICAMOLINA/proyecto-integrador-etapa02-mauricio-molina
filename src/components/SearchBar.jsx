@@ -1,3 +1,4 @@
+import './SearchBar.scss'
 
 const Searchbar = () => {
     return (
