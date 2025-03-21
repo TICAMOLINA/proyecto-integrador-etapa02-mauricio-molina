@@ -11,7 +11,7 @@ const Fila = ({ producto }) => {
             <td>
                 <img src={producto.foto} alt={producto.nombre} width={'80'}/>
             </td>
-            <td>{producto.envio}</td>
+            <td>{producto.envio ? 'Si' : 'No'}</td>
             <td>                    
                 <button>Ver</button>
                 <button>Editar</button>
