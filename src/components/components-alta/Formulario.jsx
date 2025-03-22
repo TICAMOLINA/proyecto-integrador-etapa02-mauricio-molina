@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import ProductosContext from "../../contexts/ProductosContext"
 
 const Formulario = () => {
+
+    const { crearProductoContext } = useContext(ProductosContext)
 
     const formInicial = {
         id: null,
@@ -15,8 +18,9 @@ const Formulario = () => {
 
     const [form, setForm] = useState(formInicial)
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        crearProductoContext(form)
     }
 
     const handleChange = (e) => {
