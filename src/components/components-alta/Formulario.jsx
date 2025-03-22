@@ -3,7 +3,9 @@ import ProductosContext from "../../contexts/ProductosContext"
 
 const Formulario = () => {
 
-    const { crearProductoContext } = useContext(ProductosContext)
+    const { crearProductoContext,
+        actualizarProductoContext
+     } = useContext(ProductosContext)
 
     const formInicial = {
         id: null,

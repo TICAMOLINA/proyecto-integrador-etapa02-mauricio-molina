@@ -1,5 +1,13 @@
+import { useContext } from "react"
+import ProductosContext from "../../contexts/ProductosContext"
 
 const Fila = ({ producto }) => {
+
+    const { eliminarProductoContext} = useContext(ProductosContext)
+
+    const handleEliminar = (id) => {
+        eliminarProductoContext(id)
+    }
 
     return (
         <tr>
@@ -15,7 +23,7 @@ const Fila = ({ producto }) => {
             <td>                    
                 <button>Ver</button>
                 <button>Editar</button>
-                <button>Borrar</button>
+                <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
             </td>
         </tr>
     )

@@ -149,16 +149,6 @@
       "stock": 1000,
       "categoria": "Selecciones",
       "envio": true
-    },
-    {
-      "id": "53aa",
-      "nombre": "boca",
-      "precio": "20000",
-      "categoria": "club",
-      "descripcion": "Hermosa casaca",
-      "stock": "10",
-      "foto": "imgs/boca-libertadores-2000.webp",
-      "envio": true
     }
   ]
 }
