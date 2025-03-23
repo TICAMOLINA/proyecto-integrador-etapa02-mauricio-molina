@@ -7,7 +7,7 @@ const Card = ({ producto }) => {
     const { agregarProductoAlCarritoContext } = useContext(CarritoContext)
 
     const handleAgregar = (producto) => {
-        agregarProductoAlCarritoContext()
+        agregarProductoAlCarritoContext(producto)
     }
 
     return (

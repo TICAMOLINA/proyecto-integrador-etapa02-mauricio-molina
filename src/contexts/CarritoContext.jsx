@@ -7,11 +7,29 @@ const CarritoProvider = ( {children} ) => {
 
     const [agregarAlcarrito, eliminarDelCarrito, limpiarCarrito, carrito] = useLocalStorage('carrito', [])
 
-    const agregarProductoAlCarritoContext = (producto) => {
+    function elProductoEstaEnElCarrito(producto) {
+        const nuevoArray = carrito.filter(prod => prod.id === producto.id)
+        return nuevoArray.length
+    }
 
+    function obtenerProductodeCarrito(producto) {
+        return carrito.find(prod => prod.id === producto.id)
+    }
+
+
+    const agregarProductoAlCarritoContext = (producto) => {
+        if (!elProductoEstaEnElCarrito(producto)) {
+            producto.cantidad = 1
+            agregarAlcarrito(producto)
+        } else {
+            const productoDeCarrito = obtenerProductodeCarrito(producto)
+            productoDeCarrito.cantidad++
+            window.localStorage.setItem('carrito', JSON.stringify(carrito))
+        }
     }
     const data = {
-        agregarProductoAlCarritoContext
+        agregarProductoAlCarritoContext,
+        carrito
     }
 
     return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>
