@@ -7,6 +7,7 @@ const ProductosContext = createContext()
 const ProductosProvider = ( { children }) => {
     const url = import.meta.env.VITE_BACKEND_PRODUCTOS
     const [productos, setProductos] = useState(null)
+    const [productoAEditar, setProductoAEditar] = useState(null)
 
     useEffect(() => {
       getAllProductos()
@@ -61,7 +62,7 @@ const ProductosProvider = ( { children }) => {
             const prodEliminado = await peticionesHttp(urlEliminacion, options)
             const nuevoEstadoProductos = productos.filter(prod => prod.id !== id )
             setProductos(nuevoEstadoProductos)
-            
+
         } catch (error) {
             
         }
@@ -71,7 +72,9 @@ const ProductosProvider = ( { children }) => {
         productos,
         crearProductoContext,
         actualizarProductoContext,
-        eliminarProductoContext
+        eliminarProductoContext,
+        productoAEditar,
+        setProductoAEditar
     }
 
     return <ProductosContext.Provider value={data}> {children} </ProductosContext.Provider>

@@ -3,10 +3,14 @@ import ProductosContext from "../../contexts/ProductosContext"
 
 const Fila = ({ producto }) => {
 
-    const { eliminarProductoContext} = useContext(ProductosContext)
+    const { eliminarProductoContext, setProductoAEditar} = useContext(ProductosContext)
 
     const handleEliminar = (id) => {
         eliminarProductoContext(id)
+    }
+
+    const handleEditar = (producto) => {
+        setProductoAEditar(producto)
     }
 
     return (
@@ -22,7 +26,7 @@ const Fila = ({ producto }) => {
             <td>{producto.envio ? 'Si' : 'No'}</td>
             <td>                    
                 <button>Ver</button>
-                <button>Editar</button>
+                <button onClick={() => handleEditar(producto)}>Editar</button>
                 <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
             </td>
         </tr>
