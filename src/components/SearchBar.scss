@@ -48,8 +48,6 @@
         width: 8rem;
         border-radius: 10px;
         border: 1px solid black
-
-
     }
 
     &__form-submit {
@@ -64,29 +62,52 @@
         line-height: 28px;
         border: none;
 
-       .fa-search {
-        font-size: 18px;
-        color: aliceblue;
-        transition: all .7s ease
-       }        
+        .fa-search {
+            font-size: 18px;
+            color: aliceblue;
+            transition: all .7s ease
+        }
     }
 
-    
+
     &__form-submit:hover .fa-search {
         transform: rotate(-360deg)
-       }
+    }
 
     &__carrito-container {
-        flex: 0 0 3rem; // grow shrink basis
-        order: 4;
+        width: 100px;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 4;
+
+        a {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ffffff, #e0e0e0);
+            box-shadow: 3px 3px 8px #b0b0b0, -3px -3px 8px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        a i {
+            font-size: 1.7em;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover,
+        a:focus {
+            transform: scale(1.1);
+            box-shadow: 5px 5px 10px #b0b0b0, -5px -5px 10px #ffffff;
+        }
+
+        a:hover i,
+        a:focus i {
+            transform: scale(1.2);
+        }
     }
 
-    &__image-carrito {
-        width: 100%;
-        height: 70%;
-        align-self: center;
-    }
 
     @media screen and (min-width: 576px) {
         &__form-container {
