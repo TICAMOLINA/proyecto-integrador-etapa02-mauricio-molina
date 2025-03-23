@@ -13,7 +13,7 @@ const Searchbar = () => {
                 <button type="submit" className="search-bar__form-submit"><i className="fa fa-search"></i></button>
             </form>
             <div className="search-bar__carrito-container">
-                <Link to="/carrito"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link>
+                <Link to="/carrito"><i className="fa fa-shopping-cart" aria-hidden="true"></i></Link>
             </div>
             <div className="menu-toogle">
                 <label htmlFor="menu" className="menu-toogle__label">
