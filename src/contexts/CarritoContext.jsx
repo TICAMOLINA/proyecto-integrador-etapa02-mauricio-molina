@@ -27,9 +27,15 @@ const CarritoProvider = ( {children} ) => {
             window.localStorage.setItem('carrito', JSON.stringify(carrito))
         }
     }
+
+    const eliminarProductoDelCarritoContext = (id) => {
+        eliminarDelCarrito(id)
+    }
+
     const data = {
         agregarProductoAlCarritoContext,
-        carrito
+        carrito,
+        eliminarProductoDelCarritoContext
     }
 
     return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>
