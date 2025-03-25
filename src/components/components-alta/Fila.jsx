@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
+import { Link } from "react-router"
 
 const Fila = ({ producto }) => {
 
-    const { eliminarProductoContext, setProductoAEditar} = useContext(ProductosContext)
+    const { eliminarProductoContext, setProductoAEditar, handleVer} = useContext(ProductosContext)
 
     const handleEliminar = (id) => {
         eliminarProductoContext(id)
@@ -25,7 +26,10 @@ const Fila = ({ producto }) => {
             </td>
             <td>{producto.envio ? 'Si' : 'No'}</td>
             <td>                    
-                <button>Ver</button>
+                <button>
+                <Link to={`/detalle/${producto.id}`}>
+                Ver</Link>
+                </button>
                 <button onClick={() => handleEditar(producto)}>Editar</button>
                 <button onClick={() => handleEliminar(producto.id)}>Borrar</button>
             </td>

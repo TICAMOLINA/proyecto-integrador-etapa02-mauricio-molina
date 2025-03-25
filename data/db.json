@@ -152,30 +152,5 @@
     }
   ],
   "carrito": [
-    {
-      "0": {
-        "id": "15",
-        "nombre": "Camiseta de Yugoslavia - Mundial 1990",
-        "foto": "imgs/yugoslavia-1990.webp",
-        "descripcion": "La camiseta alternativa blanca de aquel poderoso y duro conjunto balcánico que se midió frente a Argentina en Cuartos de Final",
-        "precio": 62000,
-        "stock": 1000,
-        "categoria": "Selecciones",
-        "envio": true,
-        "cantidad": 1
-      },
-      "1": {
-        "id": "14",
-        "nombre": "Camiseta de Ferro - Primera División Argentina 1994",
-        "foto": "imgs/ferro-1984.webp",
-        "descripcion": "Camiseta titular histórica con la que el equipo recientemente ascendido dió el batacazo ganándole la final del torneo a River",
-        "precio": 62000,
-        "stock": 1000,
-        "categoria": "Clubes",
-        "envio": true,
-        "cantidad": 2
-      },
-      "id": "fc46"
-    }
   ]
 }

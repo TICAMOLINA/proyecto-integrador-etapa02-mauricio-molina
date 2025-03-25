@@ -12,7 +12,6 @@ const ProductosProvider = ( { children }) => {
     useEffect(() => {
       getAllProductos()
     }, [])
-    
 
     const getAllProductos = async () => {
 
@@ -84,6 +83,7 @@ const ProductosProvider = ( { children }) => {
             
         }
     }
+
 
     const data = {
         productos,

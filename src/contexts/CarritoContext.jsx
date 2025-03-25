@@ -43,10 +43,15 @@ const CarritoProvider = ( {children} ) => {
 
         try {
 
+            const dataCarrito = {
+                createAt: Date.now(),
+                cantidad: carrito.length,
+                carrito
+            }
             const options = {
                 method: 'POST',
                 headers: {'content-type': 'application/json'},
-                body: JSON.stringify(carrito)
+                body: JSON.stringify(dataCarrito)
             }
 
             const carritoGuardado = await peticionesHttp(urlCarrito, options) 

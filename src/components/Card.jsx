@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import './Card.scss'
 import CarritoContext from '../contexts/CarritoContext'
+import { Link } from 'react-router'
 
 const Card = ({ producto }) => {
 
@@ -20,7 +21,17 @@ const Card = ({ producto }) => {
                     <h2 className="card__heading">{producto.nombre}</h2>
                     <div className="card__description">
                         <p>{producto.descripcion}</p>
-                        <button onClick={() => handleAgregar(producto)}>Agregar al carrito</button>
+
+                        <button>
+                        <Link to={`/detalle/${producto.id}`}>
+                        Ver
+                        </Link>
+                        </button>
+
+                        <button
+                        className='card__add-button' 
+                        onClick={() => handleAgregar(producto)}>
+                        Agregar al carrito</button>
                     </div>
                 </div>
             </article>
