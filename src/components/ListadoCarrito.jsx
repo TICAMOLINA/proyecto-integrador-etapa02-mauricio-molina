@@ -3,7 +3,7 @@ import CarritoContext from '../contexts/CarritoContext'
 import ItemCarrito from './ItemCarrito'
 import './ListadoCarrito.scss'
 
-const ListadoCarrito = () => {
+const ListadoCarrito = (producto) => {
 
     const { carrito, 
         limpiarCarritoContext, 
@@ -17,6 +17,9 @@ const ListadoCarrito = () => {
         limpiarCarritoContext()
     }
 
+    const totalAPagar = carrito.reduce((acumulado, producto) =>
+    acumulado + producto.precio * producto.cantidad, 0)
+
   return (
     <>
     <table className='tabla-carrito'>
@@ -24,8 +27,9 @@ const ListadoCarrito = () => {
             <tr>
                 <th>Foto</th>
                 <th>Nombre</th>
-                <th>Cantidad</th>
                 <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -44,6 +48,7 @@ const ListadoCarrito = () => {
         </tbody>
     </table>
     <hr />
+            <div><p>Total a pagar: <span>{totalAPagar}</span></p></div>
     { !carrito.length <= 0 && (
             <>
                 <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>

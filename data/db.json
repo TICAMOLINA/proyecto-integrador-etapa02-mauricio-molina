@@ -152,5 +152,45 @@
     }
   ],
   "carrito": [
+    {
+      "id": "5ba8",
+      "createAt": 1743029127944,
+      "cantidad": 3,
+      "carrito": [
+        {
+          "id": "6",
+          "nombre": "Camiseta de Brasil - Mundial de Corea y Japón 2002",
+          "foto": "imgs/brasil-2002.webp",
+          "descripcion": "La titular de la verdeamarela, con la que coronaron el trofeo mundialista en aquella ocasión.",
+          "precio": 60000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": false,
+          "cantidad": 2
+        },
+        {
+          "id": "8",
+          "nombre": "Camiseta de España - Mundial de Sudáfrica 2010",
+          "foto": "imgs/espania-2010.webp",
+          "descripcion": "La camiseta titular con la que la 'Furia Roja' hizo historia, alzando su primer trofeo en la cita mundialista.",
+          "precio": 58000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": true,
+          "cantidad": 2
+        },
+        {
+          "id": "1",
+          "nombre": "Camiseta Alemania - Mundial Italia 1990",
+          "foto": "imgs/alemania-1990.webp",
+          "descripcion": "La titular color blanca, utilizada por los bávaros en aquella disputada final contra el equipo argentino.",
+          "precio": 60000,
+          "stock": 1000,
+          "categoria": "Selecciones",
+          "envio": true,
+          "cantidad": 1
+        }
+      ]
+    }
   ]
 }
