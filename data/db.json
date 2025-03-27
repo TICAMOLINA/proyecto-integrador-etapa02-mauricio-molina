@@ -8,7 +8,7 @@
       "precio": 60000,
       "stock": 1000,
       "categoria": "Selecciones",
-      "envio": true
+      "envio": false
     },
     {
       "id": "2",

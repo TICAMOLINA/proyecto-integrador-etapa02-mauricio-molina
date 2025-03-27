@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
+import Swal from 'sweetalert2'
 
 
 
@@ -8,8 +9,25 @@ const ItemCarrito = ({producto}) => {
     const { eliminarProductoDelCarritoContext } = useContext(CarritoContext)
 
     const handleEliminar = (id) => {
-        console.log('Eliminando el producto...', id)
-        eliminarProductoDelCarritoContext(id)
+                Swal.fire({
+                    title: "¿Seguro que desea descartar este producto del carrito?",
+                    text: "Elija una respuesta",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, no quiero comprar esto",
+                    cancelButtonText: "Cancelar"
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        eliminarProductoDelCarritoContext(id)
+                      Swal.fire({
+                        title: "Borrado con éxito!",
+                        text: "El producto fue quitado de su carrito.",
+                        icon: "success"
+                      });
+                    } 
+                  });
     }
     const totalPrecio = producto.precio * producto.cantidad
 

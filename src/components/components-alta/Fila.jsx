@@ -1,13 +1,33 @@
 import { useContext } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
 import { Link } from "react-router"
+import Swal from "sweetalert2"
 
 const Fila = ({ producto }) => {
 
     const { eliminarProductoContext, setProductoAEditar, handleVer} = useContext(ProductosContext)
 
     const handleEliminar = (id) => {
-        eliminarProductoContext(id)
+        Swal.fire({
+            title: "¿Estás seguro que deseas borrar?",
+            text: "No podrás revertir este proceso",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, borralo!",
+            cancelButtonText: "Cancelar"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+              eliminarProductoContext(id)
+              Swal.fire({
+                title: "Borrado con éxito!",
+                text: "El producto ha sido borrado de la lista.",
+                icon: "success"
+              });
+            } 
+          });
     }
 
     const handleEditar = (producto) => {
