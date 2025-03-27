@@ -2,12 +2,17 @@ import { useContext } from "react"
 import Fila from "./Fila"
 import './Tabla.scss'
 import ProductosContext from "../../contexts/ProductosContext"
+import Spinner from "../../utils/Spinner"
 
 const Tabla = () => {
 
     const { productos } = useContext(ProductosContext)
 
   return (
+
+    <>
+    {productos ? (
+    
     <table className="tabla-alta">
         <thead>
             <tr>
@@ -29,6 +34,10 @@ const Tabla = () => {
             }
         </tbody>
     </table>
+    ) : (
+        <Spinner />
+    )}
+    </>
   )
 }
 
