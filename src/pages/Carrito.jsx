@@ -2,6 +2,7 @@ import useTitulo from "../hooks/useTitulo"
 import ListadoCarrito from '../components/ListadoCarrito'
 import { useContext } from "react"
 import CarritoContext from "../contexts/CarritoContext"
+import productosTotalesCarrito from "../utils/cantidadProductosCarrito"
 
 const Carrito = (producto) => {
 
@@ -9,7 +10,7 @@ const Carrito = (producto) => {
 
   const { carrito } = useContext(CarritoContext)
 
-  const productosTotalesCarrito = carrito.length
+
 
   return (
     <>
@@ -18,7 +19,7 @@ const Carrito = (producto) => {
           carrito.length <= 0 ? (
             <p></p>
           ) : (
-            <span> {productosTotalesCarrito}</span>
+            <span> {productosTotalesCarrito(carrito)}</span>
           )
         }
       </h1>

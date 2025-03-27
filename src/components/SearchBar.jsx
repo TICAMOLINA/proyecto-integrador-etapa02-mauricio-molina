@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import './SearchBar.scss'
 import { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
+import productosTotalesCarrito from '../utils/cantidadProductosCarrito'
 
 const Searchbar = () => {
 
@@ -23,7 +24,7 @@ const Searchbar = () => {
                     carrito.length <= 0 ? (
                         <p></p>
                     ) : (
-                        <div className='search-bar__carrito-items'><span>{carrito.length}</span></div>
+                        <div className='search-bar__carrito-items'><span>{productosTotalesCarrito(carrito)}</span></div>
                     )
                 }
             </div>

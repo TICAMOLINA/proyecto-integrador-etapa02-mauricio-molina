@@ -3,6 +3,7 @@ import CarritoContext from '../contexts/CarritoContext'
 import ItemCarrito from './ItemCarrito'
 import './ListadoCarrito.scss'
 import Swal from 'sweetalert2'
+import ARSConvert from '../utils/ARSConvert'
 
 const ListadoCarrito = (producto) => {
 
@@ -67,7 +68,7 @@ const ListadoCarrito = (producto) => {
                 </tbody>
             </table>
             <hr />
-            <div><p>Total a pagar: <span>{totalAPagar}</span></p></div>
+            <div><p>Total a pagar: <span>{ARSConvert(totalAPagar)}</span></p></div>
             {!carrito.length <= 0 && (
                 <>
                     <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import Swal from 'sweetalert2'
-
+import ARSConvert from '../utils/ARSConvert'
 
 
 const ItemCarrito = ({producto}) => {
@@ -29,7 +29,7 @@ const ItemCarrito = ({producto}) => {
                     } 
                   });
     }
-    const totalPrecio = producto.precio * producto.cantidad
+
 
   return (
     <>
@@ -38,9 +38,9 @@ const ItemCarrito = ({producto}) => {
             <img src={producto.foto} alt={producto.nombre} width="50px" />
         </td>
         <td>{producto.nombre}</td>
-        <td>{producto.precio}</td>
+        <td>{ARSConvert(producto.precio)}</td>
         <td>{producto.cantidad}</td>
-        <td>{totalPrecio}</td>
+        <td>{ARSConvert(producto.precio * producto.cantidad)}</td>
         <td>
             <button onClick={() => handleEliminar(producto.id)}>Eliminar</button>
         </td>

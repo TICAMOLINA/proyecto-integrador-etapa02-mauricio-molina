@@ -2,6 +2,8 @@ import { useContext } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
 import { Link } from "react-router"
 import Swal from "sweetalert2"
+import ARSConvert from "../../utils/ARSConvert"
+
 
 const Fila = ({ producto }) => {
 
@@ -37,7 +39,7 @@ const Fila = ({ producto }) => {
     return (
         <tr>
             <td>{producto.nombre}</td>
-            <td>{producto.precio}</td>
+            <td>{ARSConvert(producto.precio)}</td>
             <td>{producto.categoria}</td>
             <td>{producto.descripcion}</td>
             <td>{producto.stock}</td>
