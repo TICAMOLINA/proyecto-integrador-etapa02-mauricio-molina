@@ -3,10 +3,12 @@ import './SearchBar.scss'
 import { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import productosTotalesCarrito from '../utils/cantidadProductosCarrito'
+import ProductosContext from '../contexts/ProductosContext'
 
 const Searchbar = () => {
 
     const { carrito } = useContext(CarritoContext)
+    const { textFilter, setTextFilter} = useContext(ProductosContext)
 
     return (
         <div className="search-bar">
@@ -15,7 +17,13 @@ const Searchbar = () => {
             </div>
             <form action="#" className="search-bar__form-container">
                 <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
-                <input type="search" id="busqueda" className="search-bar__form-search" placeholder="BUSCAR..." />
+                <input 
+                type="search" 
+                value={textFilter}
+                onChange={(e) => setTextFilter(e.target.value)}
+                id="busqueda" 
+                className="search-bar__form-search" 
+                placeholder="BUSCAR..." />
                 <button type="submit" className="search-bar__form-submit"><i className="fa fa-search"></i></button>
             </form>
             <div className="search-bar__carrito-container">

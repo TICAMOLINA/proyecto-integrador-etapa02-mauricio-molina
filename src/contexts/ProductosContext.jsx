@@ -8,6 +8,7 @@ const ProductosProvider = ( { children }) => {
     const url = import.meta.env.VITE_BACKEND_PRODUCTOS
     const [productos, setProductos] = useState(null)
     const [productoAEditar, setProductoAEditar] = useState(null)
+    const [textFilter, setTextFilter] = useState('')
 
     useEffect(() => {
       getAllProductos()
@@ -85,13 +86,17 @@ const ProductosProvider = ( { children }) => {
     }
 
 
+
+
     const data = {
         productos,
         crearProductoContext,
         actualizarProductoContext,
         eliminarProductoContext,
         productoAEditar,
-        setProductoAEditar
+        setProductoAEditar,
+        textFilter,
+        setTextFilter       
     }
 
     return <ProductosContext.Provider value={data}> {children} </ProductosContext.Provider>

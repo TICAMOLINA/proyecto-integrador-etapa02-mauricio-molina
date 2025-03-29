@@ -7,7 +7,7 @@ import Spinner from "../../utils/Spinner"
 const Tabla = () => {
 
     const { productos } = useContext(ProductosContext)
-
+ 
   return (
 
     <>
