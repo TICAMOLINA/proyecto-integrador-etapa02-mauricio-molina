@@ -8,6 +8,7 @@
     height: 18rem;
     margin-top: 4rem;
 
+
     &__footer-logo {
         display: flex;
         flex-wrap: wrap;
@@ -15,9 +16,12 @@
         height: auto;
         width: 6rem;
         gap: 1rem;
-        color: white;
         font-size: 2em;
         border: 1px dotted white;
+
+        a {
+            color: white
+        }
     }
 
     &__footer-text {

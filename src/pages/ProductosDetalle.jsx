@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
+import Spinner from "../utils/Spinner"
 
 const ProductosDetalle = () => {
 
@@ -42,7 +43,7 @@ const ProductosDetalle = () => {
 
       ) :
       (
-       <p>No hay producto</p>
+       <Spinner />
       )
     }
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import CarritoContext from '../contexts/CarritoContext'
 import Swal from 'sweetalert2'
 import ARSConvert from '../utils/ARSConvert'
-
+import 'font-awesome/css/font-awesome.min.css';
 
 const ItemCarrito = ({producto}) => {
 
@@ -42,7 +42,7 @@ const ItemCarrito = ({producto}) => {
         <td>{producto.cantidad}</td>
         <td>{ARSConvert(producto.precio * producto.cantidad)}</td>
         <td>
-            <button onClick={() => handleEliminar(producto.id)}>Eliminar</button>
+            <button onClick={() => handleEliminar(producto.id)}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
         </td>
     </tr>
 
