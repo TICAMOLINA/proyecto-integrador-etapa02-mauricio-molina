@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import Spinner from "../utils/Spinner"
+import Slider from "../components/Slider"
 
 const ProductosDetalle = () => {
 
@@ -36,9 +37,11 @@ const ProductosDetalle = () => {
       productoDetalle ?
       (
         <> 
+        <Slider data={productoDetalle}/>
         <h2>El nombre del producto: {productoDetalle.nombre}</h2>
         <p>La categoría del producto es: {productoDetalle.categoria}</p>
         <p>El precio: {productoDetalle.precio}</p>
+
         </>
 
       ) :

@@ -13,7 +13,7 @@ const Searchbar = () => {
     return (
         <div className="search-bar">
             <div className="search-bar__logo-container">
-                <img className="search-bar__logo-image" src="imgs/logo1.webp" alt="logo de la pagina" />
+                <img className="search-bar__logo-image" src="/imgs/logo1.webp" alt="logo de la pagina" />
             </div>
             <form action="#" className="search-bar__form-container">
                 <label htmlFor="busqueda" className="search-bar__form-label">Buscar</label>
