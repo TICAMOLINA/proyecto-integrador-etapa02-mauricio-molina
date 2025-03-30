@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import Spinner from "../utils/Spinner"
 import Slider from "../components/Slider"
+import ARSConvert from "../utils/ARSConvert"
+import './ProductosDetalle.scss'
 
 const ProductosDetalle = () => {
 
@@ -31,18 +33,24 @@ const ProductosDetalle = () => {
     }
   return (
     <>
-    <h1>Producto detalle</h1>
 
     {
       productoDetalle ?
       (
-        <> 
-        <Slider data={productoDetalle}/>
-        <h2>El nombre del producto: {productoDetalle.nombre}</h2>
-        <p>La categoría del producto es: {productoDetalle.categoria}</p>
-        <p>El precio: {productoDetalle.precio}</p>
-
-        </>
+        <main className="product-detail">
+          <section className="product-detail__slider">
+            <Slider data={productoDetalle}/>
+          </section>
+          <section className="product-detail__text-content">
+            <h2>{productoDetalle.nombre}</h2>
+            <p>Categoría: <span>{productoDetalle.categoria}</span></p>
+            <p>{productoDetalle.descripcion}</p>
+            <p>Disponible por <span>{ARSConvert(productoDetalle.precio)}</span></p>
+            <div className="product-detail__btn-container">
+              <button className="product-detail__btn-add">AÑADIR AL CARRITO</button>
+            </div>
+          </section> 
+        </main>
 
       ) :
       (
