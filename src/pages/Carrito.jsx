@@ -3,6 +3,7 @@ import ListadoCarrito from '../components/ListadoCarrito'
 import { useContext } from "react"
 import CarritoContext from "../contexts/CarritoContext"
 import productosTotalesCarrito from "../utils/cantidadProductosCarrito"
+import './Carrito.scss'
 
 const Carrito = (producto) => {
 
@@ -13,8 +14,8 @@ const Carrito = (producto) => {
 
 
   return (
-    <>
-      <h1>Productos dentro del carrito:
+    <main className="cart-container">
+      <h1 className="cart-container__title">Productos en el <span className="cart-container__products-amount">carrito:</span>
         {
           carrito.length <= 0 ? (
             <p></p>
@@ -27,7 +28,7 @@ const Carrito = (producto) => {
       <ListadoCarrito />
 
 
-    </>
+    </main>
   )
 }
 

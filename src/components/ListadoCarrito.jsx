@@ -4,6 +4,7 @@ import ItemCarrito from './ItemCarrito'
 import './ListadoCarrito.scss'
 import Swal from 'sweetalert2'
 import ARSConvert from '../utils/ARSConvert'
+import '../pages/Carrito.scss'
 
 const ListadoCarrito = (producto) => {
 
@@ -42,15 +43,15 @@ const ListadoCarrito = (producto) => {
 
     return (
         <>
-            <table className='tabla-carrito'>
+            <table className='cart-container__cart-table'>
                 <thead>
                     <tr>
-                        <th>Foto</th>
-                        <th>Nombre</th>
+                        <th></th>
+                        <th>Producto</th>
                         <th>Precio</th>
                         <th>Cantidad</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
+                        <th>Subtotal</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,14 +69,17 @@ const ListadoCarrito = (producto) => {
                 </tbody>
             </table>
             <hr />
-            <div><p>Total a pagar: <span>{ARSConvert(totalAPagar)}</span></p></div>
-            {!carrito.length <= 0 && (
-                <>
-                    <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>
-                    <button onClick={handleComprar}>Comprar</button>
-                </>
-            )
-            }
+            <div className='cart-container__section-actions'>
+                <div><p>Total: <span>{ARSConvert(totalAPagar)}</span></p></div>
+                {!carrito.length <= 0 && (
+                    <>
+                        <button onClick={handleComprar}
+                        className='buy-btn'>Comprar</button>
+                        <button onClick={handleLimpiarCarrito}>Vaciar Carrito</button>
+                    </>
+                )
+                }
+            </div>
         </>
     )
 }
