@@ -13,7 +13,7 @@ const Tabla = () => {
     <>
     {productos ? (
     
-    <table className="tabla-alta">
+    <table className="alta-container__table">
         <thead>
             <tr>
                 <th>Nombre</th>

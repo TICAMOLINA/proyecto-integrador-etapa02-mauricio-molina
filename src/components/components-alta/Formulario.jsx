@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import ProductosContext from "../../contexts/ProductosContext"
-
+import '../../pages/Alta.scss'
 const Formulario = () => {
 
-    const { crearProductoContext, 
-        productoAEditar, 
-        setProductoAEditar, 
+    const { crearProductoContext,
+        productoAEditar,
+        setProductoAEditar,
         actualizarProductoContext
     } = useContext(ProductosContext)
 
@@ -21,9 +21,9 @@ const Formulario = () => {
     }
 
     useEffect(() => {
-      productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
+        productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
     }, [productoAEditar])
-    
+
 
     const [form, setForm] = useState(formInicial)
 
@@ -51,63 +51,64 @@ const Formulario = () => {
         setProductoAEditar(null)
     }
 
-  return (
-    <>
-        
-        <h2>Agregar : Editar</h2>
+    return (
+        <>
 
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="lbl-nombre">Nombre</label>
-                <input onChange={handleChange}
-                type="text" id="lbl-nombre" 
-                name="nombre" 
-                value={form.nombre}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-precio">Precio</label>
-                <input onChange={handleChange}
-                type="text" id="lbl-precio" 
-                name="precio" 
-                value={form.precio}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-categoria">Categoría</label>
-                <input onChange={handleChange} 
-                type="text" id="lbl-categoria" 
-                name="categoria" 
-                value={form.categoria}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-descripcion">Descripción</label>
-                <input onChange={handleChange} 
-                type="text" id="lbl-descripcion" 
-                name="descripcion" value={form.descripcion}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-stock">Stock</label>
-                <input onChange={handleChange} 
-                type="text" id="lbl-stock" 
-                name="stock" value={form.stock}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-foto">Foto</label>
-                <input onChange={handleChange} 
-                type="text" id="lbl-foto" 
-                name="foto" value={form.foto}/>
-            </div>
-            <div>
-                <label htmlFor="lbl-envio">Envío</label>
-                <input onChange={handleChange}
-                type="checkbox" id="lbl-envio" 
-                name="envio" checked={form.envio}/>
-            </div>
 
-            <button type="submit">Guardar : Editar</button>
-            <button onClick={handleReset} type="reset">Limpiar</button>
-        </form>
-    </>
-  )
+            <form className="alta-container__form-alta" onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="lbl-nombre">Nombre</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-nombre"
+                        name="nombre"
+                        value={form.nombre} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-precio">Precio</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-precio"
+                        name="precio"
+                        value={form.precio} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-categoria">Categoría</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-categoria"
+                        name="categoria"
+                        value={form.categoria} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-descripcion">Descripción</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-descripcion"
+                        name="descripcion" value={form.descripcion} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-stock">Stock</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-stock"
+                        name="stock" value={form.stock} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-foto">Foto</label>
+                    <input onChange={handleChange}
+                        type="text" id="lbl-foto"
+                        name="foto" value={form.foto} />
+                </div>
+                <div>
+                    <label htmlFor="lbl-envio">Envío</label>
+                    <input onChange={handleChange}
+                        type="checkbox" id="lbl-envio"
+                        name="envio" checked={form.envio} />
+                </div>
+
+                <div className="alta-container__btn-container">
+                    <button className={productoAEditar ? 'alta-container__btn-submit-edit' : 'alta-container__btn-submit'} type="submit">{productoAEditar ? 'Editar' : 'Crear'}</button>
+                    <button className="alta-container__btn-reset" onClick={handleReset} type="reset">Limpiar</button>
+                </div>
+            </form>
+        </>
+    )
 }
 
 export default Formulario

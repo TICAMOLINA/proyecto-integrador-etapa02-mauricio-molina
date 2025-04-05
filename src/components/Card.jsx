@@ -31,7 +31,7 @@ const Card = ({ producto }) => {
                         <button
                         className='card__add-button' 
                         onClick={() => handleAgregar(producto)}>
-                        Agregar al carrito</button>
+                        Agregar al carrito <i className="fa fa-shopping-cart" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </article>

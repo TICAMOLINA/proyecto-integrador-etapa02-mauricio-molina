@@ -59,7 +59,9 @@ const ProductosDetalle = () => {
                 <div className="product-detail__btn-container">
                   <button
                     onClick={() => handleAgregar(productoDetalle)}
-                    className="product-detail__btn-add">AÑADIR AL CARRITO</button>
+                    className="product-detail__btn-add">
+                      AGREGAR AL CARRITO <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                      </button>
                 </div>
               </section>
             </main>
