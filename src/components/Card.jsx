@@ -22,11 +22,9 @@ const Card = ({ producto }) => {
                     <div className="card__description">
                         <p>{producto.descripcion}</p>
 
-                        <button>
                         <Link to={`/detalle/${producto.id}`}>
                         Ver
                         </Link>
-                        </button>
 
                         <button
                         className='card__add-button' 

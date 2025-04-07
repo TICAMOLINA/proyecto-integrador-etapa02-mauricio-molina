@@ -55,8 +55,10 @@
             flex-direction: row;
             align-items: start;
             height: 55vh;
+            background-color: rgb(231, 231, 231);
 
             &__text-content {
+                width: 600px;
                 text-align: start;
     
                 p {

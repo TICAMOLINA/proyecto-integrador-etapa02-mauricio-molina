@@ -1,7 +1,7 @@
 .card {
-    min-width: auto;
-    max-width: auto;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: rgb(231, 227, 227);
@@ -26,8 +26,8 @@
     &__article {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-
+        justify-content: space-between;
+        height: 100%;
     }
 
     &__image {
@@ -46,7 +46,6 @@
         justify-content: center;
         overflow: hidden;
         clip-path: circle(50% at 50% 50%);
-
     }
 
     &:hover &__image-container,
@@ -61,15 +60,35 @@
     }
 
     &__description {
-        position: relative;
+        margin-top: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 21px;
         text-align: center;
+        margin-bottom: 21px;
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            font-size: 14px;
+            border: none;
+            border-radius: 10px;
+            background-color: #c24875;
+            color: white;
+            width: 60%;
+            padding: 7px;
+            margin: 5px;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #A90B45;
+            }
+        }
 
         button {
-            align-items: end;
             border: none;
             border-radius: 10px;
             background-color: #c24875;
@@ -81,12 +100,6 @@
 
             &:hover {
                 background-color: #A90B45;
-            }
-            
-            a {
-                width: 100%;
-                text-decoration: none;
-                color:white;
             }
         }
     }
@@ -106,7 +119,6 @@
         }
 
         &__article {
-
             flex-direction: column;
         }
     }
@@ -116,7 +128,6 @@
             width: 100%;
             max-width: 250px;
             margin: 50px auto;
-
         }
 
         &__article {

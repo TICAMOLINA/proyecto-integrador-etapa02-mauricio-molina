@@ -24,7 +24,6 @@
 
     &__form-alta {
         padding: 1.5rem;
-
         border-radius: 8px;
         width: auto;
         margin: auto;
@@ -59,6 +58,26 @@
         }
     }
 
+    &__checkbox-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+        label {
+            margin: 0;
+            text-align: start;
+            font-weight: 600;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+    }
+
     &__btn-container {
         display: flex;
         flex-direction: column;
@@ -90,4 +109,58 @@
         }
     }
 
+    @media screen and (min-width: 576px) {
+        &__checkbox-group {
+            justify-content: start;
+        }
+
+        &__form-alta {
+
+            label {
+                text-align: start;
+                margin-left: 10px;
+            }
+
+            button {
+                padding: 10px;
+                font-weight: 600;
+                width: 6rem;
+            }
+        }
+
+        &__btn-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+
+        &__form-crud-container  {
+            justify-content: start;
+            align-items: start;
+            margin-left: 2rem;
+
+            h1 {
+                font-size: 1.6em;
+            }
+        }
+
+        &__form-alta {
+            margin: 0;
+            width: 50%;
+            max-width: none;
+
+            label {
+                font-size: 1.2em;
+            }
+
+            input {
+                padding: 8px
+            }
+        }
+    }
 }

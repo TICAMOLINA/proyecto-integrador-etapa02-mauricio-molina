@@ -95,8 +95,8 @@ const Formulario = () => {
                         type="text" id="lbl-foto"
                         name="foto" value={form.foto} />
                 </div>
-                <div>
-                    <label htmlFor="lbl-envio">Envío</label>
+                <div className="alta-container__checkbox-group">
+                    <label className="checkbox-send" htmlFor="lbl-envio">Envío</label>
                     <input onChange={handleChange}
                         type="checkbox" id="lbl-envio"
                         name="envio" checked={form.envio} />
