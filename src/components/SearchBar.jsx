@@ -5,7 +5,7 @@ import CarritoContext from '../contexts/CarritoContext'
 import productosTotalesCarrito from '../utils/cantidadProductosCarrito'
 import ProductosContext from '../contexts/ProductosContext'
 
-const Searchbar = () => {
+const SearchBar = () => {
 
     const { carrito } = useContext(CarritoContext)
     const { textFilter, setTextFilter} = useContext(ProductosContext)
@@ -47,4 +47,4 @@ const Searchbar = () => {
     )
 }
 
-export default Searchbar
+export default SearchBar

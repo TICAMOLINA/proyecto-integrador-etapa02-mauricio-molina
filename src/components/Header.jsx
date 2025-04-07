@@ -1,6 +1,6 @@
 import './Header.scss'
 import Navbar from "./Navbar"
-import Searchbar from "./Searchbar"
+import SearchBar from "./SearchBar"
 
 const Header = () => {
     return (
@@ -9,7 +9,7 @@ const Header = () => {
 
             <Navbar />
 
-            <Searchbar />
+            <SearchBar />
 
         </header>
     )
