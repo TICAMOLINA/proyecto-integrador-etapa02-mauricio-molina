@@ -1,3 +1,5 @@
+@use '../scss/variables';
+
 .alta-container {
     margin: 1rem;
 
@@ -13,7 +15,7 @@
 
         span {
             text-transform: uppercase;
-            color: #9397ec;
+            color: variables.$color-span-principal;
         }
     }
 
@@ -102,10 +104,10 @@
     }
 
     &__btn-reset {
-        background-color: #FF0000;
+        background-color: variables.$color-bg-delete-button;
 
         &:hover {
-            background-color: #940000;
+            background-color: variables.$color-hover-delete-button;
         }
     }
 

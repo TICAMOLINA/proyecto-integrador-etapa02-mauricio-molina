@@ -1,3 +1,5 @@
+@use '../../scss/variables';
+
 .alta-container {
 
     &__table-container {
@@ -28,7 +30,7 @@
         th {
             padding: 10px;
             text-align: center;
-            background-color: #A90B45;
+            background-color: variables.$color-base;
             border: none;
             color: white;
         }
@@ -55,9 +57,9 @@
                 }
             }
             &:nth-child(3){
-                background-color: #FF0000;                
+                background-color: variables.$color-bg-delete-button;                
                 &:hover {
-                    background-color: #940000;
+                    background-color: variables.$color-hover-delete-button;
                 }
             }
 

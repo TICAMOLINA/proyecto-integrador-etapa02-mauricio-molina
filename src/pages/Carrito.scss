@@ -1,3 +1,5 @@
+@use '../scss/variables';
+
 .cart-container {
     margin: 1rem;
 
@@ -7,7 +9,7 @@
     }
 
     &__products-amount {
-        color: #9397ec;
+        color: variables.$color-span-principal;
     }
 
     &__cart-table {
@@ -59,14 +61,14 @@
 
     
         th {
-            background-color: #A90B45;
+            background-color: variables.$color-base;
             color: wheat;
             display: none;
         }
     }
 
     &__subtotal {
-        color: #A90B45;
+        color: variables.$color-base;
         font-weight: 900;
     }
 
@@ -79,7 +81,7 @@
         flex-direction: column;
         width: 100%;
         height: 10rem;
-        border-top: 3px solid #A90B45;
+        border-top: 3px solid variables.$color-base;
         align-items: center;
         padding: 10px;
         gap: 10px;

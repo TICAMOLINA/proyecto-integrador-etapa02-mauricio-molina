@@ -1,9 +1,11 @@
+@use '../scss/variables';
+
 .footer-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: variables.$color-footer-nav-background;
     gap: 2rem;
     height: 18rem;
     margin-top: 4rem;
@@ -17,15 +19,15 @@
         width: 6rem;
         gap: 1rem;
         font-size: 2em;
-        border: 1px dotted white;
+        border: 1px dotted variables.$color-footer-text;
 
         a {
-            color: white
+            color: variables.$color-footer-text
         }
     }
 
     &__footer-text {
-        color: white;
+        color: variables.$color-footer-text;
         text-align: center;
     }
 
